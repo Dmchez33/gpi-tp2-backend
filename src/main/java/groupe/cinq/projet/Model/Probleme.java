@@ -26,6 +26,6 @@ public class Probleme {
     @JoinColumn(name = "ordinateur_id")
     private Ordinateur ordinateur;
 
-    // Getters and Setters
+    
 }
 

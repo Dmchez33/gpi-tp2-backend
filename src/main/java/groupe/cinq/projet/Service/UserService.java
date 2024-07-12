@@ -1,5 +1,7 @@
 package groupe.cinq.projet.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +35,14 @@ public class UserService {
      */
     public User saveUser(User user) {
         return userRepository.save(user);
+    }
+
+    /**
+     * get All User.
+     * 
+     * @return fournit la liste des utilisateurs disponibles dans la base de donnée
+     */
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 }

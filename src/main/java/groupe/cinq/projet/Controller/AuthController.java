@@ -1,5 +1,7 @@
 package groupe.cinq.projet.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,5 +49,10 @@ public class AuthController {
             return new ResponseEntity<>("Ce compte existe déjà !", HttpStatus.OK); // Retourne un message d'erreur si l'utilisateur existe déjà
         }
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK); // Retourne les détails de l'utilisateur enregistré
+    }
+
+    @GetMapping("/get")
+    public ResponseEntity<List<User>> getAllUsers(){
+        return new ResponseEntity<>(userService.getAllUser(),HttpStatus.OK);
     }
 }
